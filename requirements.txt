@@ -1,0 +1,5 @@
+python-decouple
+openai
+asyncio
+fastapi
+uvicorn 
