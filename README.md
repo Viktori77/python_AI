@@ -55,17 +55,17 @@ source venv/bin/activate
 
 4. **Получение API ключа, например**:
 
-   1.
+   4.1.
 
    ```bash
    https://openrouter.ai/settings/keys
    ```
 
-   2. Нажать "Create API Key"
+   4.2. Нажать "Create API Key"
 
-   3. Вписать Name
+   4.3. Вписать Name
 
-   4. Нажать "Create"
+   4.4. Нажать "Create"
 
 5. **Создайте файл `.env`** с вашими настройками (см. раздел "Переменные окружения").
 
@@ -96,9 +96,11 @@ openai==2.14.0
 
 ## Подход распознавания:
 
-````
+```
 Запрос:
 - вопрос от пользователя c нужными параметрами и правилами в формате:
+```
+
 ```bash
 class GenerateRequest(BaseModel):
     task: str
@@ -107,7 +109,9 @@ class GenerateRequest(BaseModel):
     characteristics: Optional[str] = ""
 ```
 
+```
 - формируется запрос, на основании которого получается ответ от модели LLM в формате:
+```
 
 ```bash
 class GenerateResponse(BaseModel):
@@ -115,4 +119,5 @@ class GenerateResponse(BaseModel):
     product: str
     generated_text: str
     original_request: Optional[Dict[str, Any]] = None
-````
+
+```
